@@ -1,165 +1,300 @@
-<!doctype html>
-<html lang="ta">
+<!DOCTYPE html><html lang="ta">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>என் அன்பு மகனுக்கு — பிறந்தநாள் வாழ்த்து</title>
-
-  <!-- Google fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&family=Gochi+Hand&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teacher Wish • Tamil + English</title>
   <style>
     :root{
-      --card:#fff;
-      --accent:#ff6b6b;
-      --muted:#6b6b6b;
-      --paper:#fff7f5;
+      --bg:#0b1020;
+      --card:#121936;
+      --text:#e7ecff;
+      --muted:#a7b0d6;
+      --accent:#8b5cf6; /* violet */
+      --accent2:#22d3ee; /* cyan */
+      --heart:#ff2e63;
+      --gold:#ffd166;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
-      font-family:"Nunito Sans",system-ui,Arial;
-      background:linear-gradient(180deg,#fff5ef 0%,#fffdfb 100%);
-      display:flex;align-items:center;justify-content:center;
-      min-height:100vh;overflow:hidden;
-    }
-    .card{
-      width:100%;max-width:860px;
-      background:var(--card);
-      border-radius:22px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.1);
-      padding:30px;position:relative;
-      border:2px solid #ffd6d6;
-      animation:popIn 1.2s ease;
-      transition:transform 0.3s,box-shadow 0.3s;
-    }
-    .card:hover{transform:rotate(-1deg) scale(1.02);box-shadow:0 20px 40px rgba(255,107,107,0.25);}
-    @keyframes popIn{0%{transform:scale(0.8);opacity:0}100%{transform:scale(1);opacity:1}}
-    .heart{position:absolute;right:18px;top:18px;font-size:34px;animation:pulse 2s infinite;}
-    @keyframes pulse{0%,100%{transform:scale(1) rotate(-12deg);}50%{transform:scale(1.3) rotate(-12deg);}}
-    header{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
-    .badge{
-      width:72px;height:72px;border-radius:50%;
-      background:radial-gradient(circle at 30% 30%,#ffb5b5,#ffefef);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:800;font-size:26px;color:var(--accent);
-      font-family:"Gochi Hand",cursive;
-      animation:spin 6s linear infinite;
-    }
-    @keyframes spin{0%{transform:rotate(0);}100%{transform:rotate(360deg);}}
-    h1{margin:0;font-size:24px;color:#c94a4a;}
-    p.lead{margin:6px 0 0;font-size:14px;color:var(--muted)}
-    article.letter{
-      background:linear-gradient(180deg,var(--paper),#fff);
-      border-radius:14px;padding:22px;margin-top:18px;
-      border:1px dashed rgba(200,120,120,0.15);
-    }
-    .meta{display:flex;justify-content:space-between;margin-bottom:8px;font-size:13px;color:var(--muted);}
-    .content{font-size:17px;line-height:1.8;white-space:pre-wrap;}
-    .cake{margin:25px auto;width:120px;height:80px;background:#ff6b6b;
-      border-radius:10px;position:relative;box-shadow:0 6px 12px rgba(0,0,0,0.2);}
-    .cake::before{content:"";position:absolute;top:-25px;left:50%;transform:translateX(-50%);
-      width:10px;height:25px;background:#f2c94c;border-radius:3px;}
-    .flame{position:absolute;top:-40px;left:50%;transform:translateX(-50%);
-      width:14px;height:18px;border-radius:50%;
-      background:radial-gradient(circle,#ffeb3b 30%,#ff9800 70%);
-      animation:flicker 0.3s infinite alternate;}
-    @keyframes flicker{from{transform:translateX(-50%) scale(1);}to{transform:translateX(-50%) scale(1.2);}}
-    footer{margin-top:20px;display:flex;justify-content:space-between;font-size:13px;color:var(--muted);}
-    .signature{font-family:"Gochi Hand",cursive;color:var(--accent);font-size:20px;animation:glow 2s ease-in-out infinite alternate;}
-    @keyframes glow{from{text-shadow:0 0 5px #ff6b6b;}to{text-shadow:0 0 20px #ff6b6b;}}
-    .balloon{position:absolute;bottom:-150px;width:40px;height:60px;border-radius:50%;animation:floatUp 8s infinite;}
-    @keyframes floatUp{0%{transform:translateY(0);opacity:1;}100%{transform:translateY(-120vh);opacity:0;}}
-    .sparkle{position:absolute;width:4px;height:4px;background:white;border-radius:50%;opacity:0.8;animation:twinkle 2s infinite;}
-    @keyframes twinkle{0%,100%{opacity:0.2;transform:scale(0.8);}50%{opacity:1;transform:scale(1.5);}}
-    .controls{text-align:center;margin-top:15px;}
-    .btn{padding:8px 16px;border:none;border-radius:20px;background:var(--accent);color:#fff;font-weight:bold;cursor:pointer;}
-    .btn:hover{background:#e04b4b;box-shadow:0 0 10px #ff6b6b;}
+      margin:0;
+      font-family: ui-rounded, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: radial-gradient(1200px 700px at 15% 10%, #151a36 0%, var(--bg) 40%),
+                  radial-gradient(1000px 600px at 85% 10%, #161c3b 0%, #0a0f1e 40%);
+      overflow-x:hidden;
+    }/* Floating soft glow dots */
+.stars{
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:radial-gradient(2px 2px at 10% 20%, #fff3 30%, transparent 32%),
+                   radial-gradient(2px 2px at 30% 80%, #fff3 30%, transparent 32%),
+                   radial-gradient(2px 2px at 70% 30%, #fff3 30%, transparent 32%),
+                   radial-gradient(2px 2px at 90% 60%, #fff3 30%, transparent 32%);
+  animation: twinkle 6s linear infinite;
+}
+@keyframes twinkle { 50%{opacity:.6} }
+
+.container{position:relative; z-index:1; min-height:100%; display:grid; place-items:center; padding:24px}
+
+.card{
+  width:min(900px, 94vw);
+  background: linear-gradient(180deg, #141b3a 0%, var(--card) 100%);
+  border:1px solid #2a355f;
+  border-radius:22px;
+  box-shadow: 0 20px 60px #0007, inset 0 1px 0 #ffffff10, inset 0 -1px 0 #00000050;
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.heading{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:center;
+  margin-bottom:12px
+}
+.heading .badge{
+  padding:6px 10px; border-radius:999px; font-size:12px; letter-spacing:.3px; text-transform:uppercase; color:#0a1022;
+  background:linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+  font-weight:700;
+}
+h1{
+  margin:6px 0 0; text-align:center; font-size:clamp(26px, 4vw, 40px); line-height:1.15;
+  background:linear-gradient(90deg, #e9edff, #d9f8ff);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+
+.heart{
+  width:86px; height:86px; display:grid; place-items:center; margin:16px auto 8px;
+  filter: drop-shadow(0 6px 20px #ff2e6320) drop-shadow(0 0 30px #ff2e6330);
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float { 50%{ transform:translateY(-6px) } }
+.pulse { animation: pulse 1.2s ease-in-out infinite }
+@keyframes pulse { 50%{ transform:scale(1.08)} }
+
+.msg{ text-align:center; color:var(--muted); font-size:clamp(14px, 2.3vw, 18px); line-height:1.7; margin:0 auto; max-width:780px }
+.msg strong{ color:#fff }
+
+.names{
+  display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:18px 0 8px
+}
+.pill{
+  border:1px solid #39457a; background:#0f1531; color:#eaf2ff; padding:10px 14px; border-radius:999px; font-weight:600;
+  box-shadow: inset 0 0 0 1px #00000060;
+}
+
+.grid{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:18px
+}
+@media (max-width:720px){ .grid{ grid-template-columns:1fr } }
+
+.note{
+  background: linear-gradient(180deg, #0e1430, #0b122b);
+  border:1px dashed #2c396b; border-radius:18px; padding:16px;
+}
+.note h3{margin:0 0 6px; font-size:18px}
+.note p{margin:0; color:#c7d3ff; font-size:15px; line-height:1.6}
+
+.controls{
+  display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:20px
+}
+.btn{
+  appearance:none; border:0; cursor:pointer; border-radius:14px; padding:12px 16px; font-weight:700;
+  background:linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+  color:#0a1128; box-shadow: 0 10px 30px #0008, inset 0 1px 0 #ffffff50;
+  transition: transform .06s ease, filter .2s ease;
+}
+.btn:active{ transform:translateY(1px) scale(.995) }
+
+.ghost{
+  background:#0e1430; color:#e8efff; border:1px solid #2d3760; box-shadow:none
+}
+
+.footer{ text-align:center; margin-top:18px; color:#9fb1ff; font-size:13px }
+
+/* canvas confetti */
+#confetti{ position:fixed; inset:0; z-index:2; pointer-events:none; }
+
+/* Floating hearts */
+.float-heart{ position:fixed; width:14px; height:14px; background:var(--heart); transform:rotate(45deg);
+  top: 60%; left:50%; margin:-7px 0 0 -7px; opacity:.9; border-radius:2px; pointer-events:none; z-index:2;
+  box-shadow: -7px 0 0 1px var(--heart), 0 -7px 0 1px var(--heart);
+  animation: rise 2.4s ease-out forwards; }
+@keyframes rise{ 0%{ transform:translate(-50%,-10px) rotate(45deg) scale(.7); opacity:.9}
+                 80%{opacity:.7}
+                 100%{ transform:translate(-50%,-220px) rotate(45deg) scale(1.4); opacity:0}}
+
+.print-hint{ text-align:center; margin-top:8px; font-size:12px; color:#7e8cc9 }
+
+.inputs{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:12px }
+.inputs input{ background:#0d1330; color:#e9efff; border:1px solid #2d3967; padding:10px 12px; border-radius:12px; min-width:220px }
+
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="heart">💖</div>
-    <header>
-      <div class="badge">🎉</div>
-      <div>
-        <h1>என் அன்பு மகனுக்கு</h1>
-        <p class="lead">இன்றைய உங்கள் சிறப்பான நாளுக்காக என் இதயம் நிறைந்த வாழ்த்துகள்.</p>
+  <canvas id="confetti"></canvas>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="container">
+    <main class="card" role="main">
+      <div class="heading">
+        <span class="badge" aria-label="With love and gratitude">With Love & Gratitude</span>
       </div>
-    </header>
+      <h1 id="title">To My Beloved Teachers</h1>
+      <svg class="heart pulse" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="var(--heart)" d="M12 21s-6.716-4.35-9.428-7.062C.86 12.227 0 10.91 0 9.428 0 6.882 2.044 4.83 4.571 4.83c1.53 0 3.012.707 3.952 1.842C9.417 5.537 10.9 4.83 12.429 4.83 14.956 4.83 17 6.882 17 9.428c0 1.482-.86 2.799-2.572 4.51C18.716 16.65 12 21 12 21z"/>
+      </svg><div class="names" id="namePills" aria-live="polite"></div>
 
-    <article class="letter">
-      <div class="meta">
-        <span>பிறந்தநாள்: இன்று உன் நாள்</span>
-        <span>அழகு மற்றும் வெற்றி நலம்</span>
-      </div>
-      <div class="content">
-இன்று உன் பிறந்தநாள் — என் வாழ்வின் அழகான தருணம் நினைவிற்கு வருகிறது.  
-உன் சிரிப்பு என் உலகத்தை ஒளிர வைக்கிறது; உன் நலம் என் உயிரின் மூச்சாகும்.  
+  <p class="msg" id="taMsg">
+    <strong>மாம்</strong> இதுவரைக்கு நீங்க மாம் மாதிரி நடந்தது இல்ல; <strong>ஒரு அம்மா</strong> மாதிரி தான் நடந்துருக்கீங்க.
+    இது ஒரு வார்த்தை மட்டும் இல்ல — <strong>ஒரு உணர்வு</strong>.
+    நீங்க எனக்கு <strong>இன்னொரு அம்மா</strong> மாதிரி தான்... அதை உரிமையா விட்டு கொடுக்க மாட்டேன்.
+  </p>
+  <p class="msg" id="enMsg">
+    <strong>Ma'am</strong>, you've never just been a teacher — you've cared like <strong>a mother</strong>.
+    It's not just a word; it's <strong>an emotion</strong>. To me, you are <strong>another mom</strong>, and I'll cherish that forever.
+  </p>
 
-நீ சிறு வயதில் என் கையைப் பிடித்து நடந்த தருணம்,  
-இன்றும் என் மனதில் இனிமையாக ஒலிக்கிறது.  
-
-இந்த புதிய வயதில்:  
-✨ உன் கனவுகள் அனைத்தும் நிறைவேறட்டும்  
-✨ ஆரோக்கியம், அமைதி என்றும் உன்னோடு இருக்கட்டும்  
-✨ நல்லவர்கள் உன் வாழ்வில் இணைந்து உனக்கு வலிமையாகட்டும்  
-✨ உன் நாள்கள் அனைத்தும் சந்தோஷம் மலரட்டும்  
-
-என் மகனே, எங்கு சென்றாலும்,  
-உன் பக்கம் என் பிரார்த்தனையும் என் அன்பும் என்றும் இருக்கும். ❤️🎂✨  
-
-என்றும் அன்புடன்,  
-அம்மா
-      </div>
-      <div class="cake"><div class="flame"></div></div>
-    </article>
-
-    <footer>
-      <div class="signature">அன்புடன் — அம்மா</div>
-      <div>© உங்கள் குடும்பம்</div>
-    </footer>
-
-    <div class="controls">
-      <button class="btn" onclick="replayCelebration()">🎊 மீண்டும் கொண்டாட</button>
-      <button class="btn" onclick="toggleMusic()">🎵 இசை</button>
+  <section class="grid" aria-label="Notes">
+    <div class="note">
+      <h3>Why you’re special</h3>
+      <p>
+        For the patience, for the extra explanations, for believing in me when I doubted myself — thank you.
+      </p>
     </div>
+    <div class="note">
+      <h3>ஒரு சிறப்பு நன்றி</h3>
+      <p>
+        எப்போதும் ஊக்கப்படுத்தி முன்னேற்றம் பார்த்ததுக்கு நன்றி. உங்கள மாதிரி ஆசிரியர் கிடைத்தது பெரிய அதிர்ஷ்டம்.
+      </p>
+    </div>
+  </section>
+
+  <div class="inputs" aria-label="Customize names">
+    <input id="name1" placeholder="Teacher name 1 (e.g., Latha Ma'am)"/>
+    <input id="name2" placeholder="Teacher name 2 (optional)"/>
   </div>
 
-  <!-- Background Music -->
-  <audio id="bgm" loop>
-    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/wav">
-  </audio>
+  <div class="controls">
+    <button class="btn" id="celebrateBtn">Celebrate 🎉</button>
+    <button class="btn ghost" id="printBtn">Save / Print</button>
+  </div>
+  <p class="print-hint">Tip: Use “Save / Print” to export this as a card or PDF.</p>
 
-  <script>
-    const audio=document.getElementById("bgm");
-    function toggleMusic(){if(audio.paused){audio.play();}else{audio.pause();}}
+  <div class="footer" id="date"></div>
+</main>
 
-    function createBalloon(){
-      const b=document.createElement("div");
-      b.classList.add("balloon");
-      b.style.left=Math.random()*100+"vw";
-      b.style.background=`radial-gradient(circle at 30% 30%,hsl(${Math.random()*360},70%,70%),hsl(${Math.random()*360},80%,50%))`;
-      b.style.animationDuration=(6+Math.random()*4)+"s";
-      document.body.appendChild(b);
-      setTimeout(()=>b.remove(),10000);
+  </div>  <script>
+    // ===== Customize recipient names here (defaults) =====
+    const teacherNames = ["Latha Ma'am", "Medo Ma'am"]; // change or use the inputs above
+
+    // ===== Render name pills =====
+    const pills = document.getElementById('namePills');
+    function renderPills(){
+      pills.innerHTML = '';
+      teacherNames.filter(Boolean).forEach(n=>{
+        const s = document.createElement('span');
+        s.className = 'pill'; s.textContent = n; pills.appendChild(s);
+      });
+      document.getElementById('title').textContent = teacherNames.length === 1 ? `To ${teacherNames[0]}` : 'To My Beloved Teachers';
     }
 
-    function createSparkle(){
-      const s=document.createElement("div");
-      s.classList.add("sparkle");
-      s.style.left=Math.random()*100+"vw";
-      s.style.top=Math.random()*100+"vh";
-      document.body.appendChild(s);
-      setTimeout(()=>s.remove(),3000);
+    // ===== Inputs to change names live =====
+    const i1 = document.getElementById('name1');
+    const i2 = document.getElementById('name2');
+    i1.value = teacherNames[0] || '';
+    i2.value = teacherNames[1] || '';
+
+    [i1,i2].forEach((inp, idx)=>{
+      inp.addEventListener('input', ()=>{
+        teacherNames[idx] = inp.value.trim();
+        renderPills();
+      })
+    });
+
+    renderPills();
+
+    // ===== Date footer =====
+    const dt = new Date();
+    const opts = { year:'numeric', month:'long', day:'numeric' };
+    document.getElementById('date').textContent = dt.toLocaleDateString(undefined, opts);
+
+    // ===== Print button =====
+    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+
+    // ===== Floating hearts on click =====
+    function burstHearts(count=16){
+      for(let i=0;i<count;i++){
+        setTimeout(()=>{
+          const h = document.createElement('div');
+          h.className='float-heart';
+          const x = (50 + (Math.random()*30-15));
+          h.style.left = x+'%';
+          document.body.appendChild(h);
+          setTimeout(()=> h.remove(), 2600);
+        }, i*60);
+      }
     }
 
-    function replayCelebration(){
-      for(let i=0;i<20;i++){setTimeout(createBalloon,i*300);}
-      for(let i=0;i<30;i++){setTimeout(createSparkle,i*200);}
+    // ===== Simple canvas confetti =====
+    const c = document.getElementById('confetti');
+    const ctx = c.getContext('2d');
+    let W,H, pieces=[]; let raf;
+    function resize(){ W= c.width = innerWidth; H = c.height = innerHeight }
+    addEventListener('resize', resize); resize();
+
+    function makePiece(){
+      return {
+        x: Math.random()*W,
+        y: -20 - Math.random()*H*0.5,
+        size: 6+Math.random()*8,
+        fall: 1+Math.random()*3,
+        drift: -1+Math.random()*2,
+        rot: Math.random()*Math.PI,
+        rotSpd: -0.2+Math.random()*0.4,
+        shape: Math.random()>0.5?'rect':'tri'
+      };
     }
 
-    setInterval(createBalloon,1500);
-    setInterval(createSparkle,800);
-  </script>
-</body>
+    function drawPiece(p){
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.globalAlpha = 0.9;
+      // pick a hue that blends with accent colors without specifying exact colors
+      // we just vary HSL lightness with default fillStyle cycling
+      const hue = 200 + Math.random()*160; // cool to warm range
+      ctx.fillStyle = `hsl(${hue} 100% 70%)`;
+      if(p.shape==='rect'){
+        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+      } else {
+        ctx.beginPath();
+        ctx.moveTo(-p.size/2, p.size/2);
+        ctx.lineTo(0, -p.size/2);
+        ctx.lineTo(p.size/2, p.size/2);
+        ctx.closePath();
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    function step(){
+      ctx.clearRect(0,0,W,H);
+      pieces.forEach(p=>{
+        p.y += p.fall;
+        p.x += p.drift;
+        p.rot += p.rotSpd;
+        drawPiece(p);
+      });
+      pieces = pieces.filter(p=> p.y < H+20);
+      if(pieces.length>0) raf = requestAnimationFrame(step);
+    }
+
+    function confettiBurst(n=140){
+      for(let i=0;i<n;i++) pieces.push(makePiece());
+      cancelAnimationFrame(raf); step();
+    }
+
+    const celebrateBtn = document.getElementById('celebrateBtn');
+    celebrateBtn.addEventListener('click', ()=>{ confettiBurst(); burstHearts(); });
+
+    // Auto celebrate on first load
+    setTimeout(()=> { confettiBurst(160); burstHearts(22); }, 400);
+  </script></body>
 </html>
